@@ -23,6 +23,17 @@ case $genesis in
     echo goerli;;
   0x14c2283285a88fe5fce9bf5c573ab03d6616695d717b12a127188bcacfc743c4)
     echo kotti;;
+  0x5d2570eee4405f2fb295b29ba683c688c0701a041c36f1e134625eb504ee6856)
+    echo rsk;;
+#  *)
+#    echo unknown;;
   *)
-    echo unknown;;
+    tx1=$(seth block 1 hash)
+    case $tx1 in
+      0x5fe57345ff1219047d17eb9c98d29ed52ff054952dea66ca45bb85ea77913065)
+        echo rsk-testnet;;
+      *)
+        echo unknown;;
+    esac
+    #echo unknown;;
 esac
